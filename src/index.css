@@ -1,13 +1,141 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container-map {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: block;
+  position: relative;
+}
+.markers{
+  height: 95vh;
+  overflow: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.geo-map{
+  margin: 15px auto;
+}
+
+.popup-loading {
+  position: relative;
+  top: 160px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .8);
+  transition: all 1s;
+  opacity: 1;
+}
+
+/* Loader 6 */
+
+.loader-6 {
+  height: 32px;
+  width: 32px;
+}
+
+.loader-6 span {
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 32px;
+  width: 32px;
+}
+
+.loader-6 span::before, .loader-6 span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 32px;
+  width: 32px;
+  border: 10px solid rgb(255, 97, 0);
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: loader-6-1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
+  animation: loader-6-1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
+}
+
+@-webkit-keyframes loader-6-1 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes loader-6-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.loader-6 span::after {
+  -webkit-animation: loader-6-2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
+  animation: loader-6-2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
+}
+
+@-webkit-keyframes loader-6-2 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes loader-6-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Layout */
+
+.wrapper h4 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: rgb(255, 97, 0)
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.removex {
+  /* right: 500px; */
+  /* opacity: 0; */
+}
+
+.mapboxgl-ctrl-geocoder{
+  min-width: 100%!important;
 }
